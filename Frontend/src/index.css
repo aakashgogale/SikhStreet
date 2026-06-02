@@ -72,16 +72,18 @@
     @apply border-border;
   }
   body {
-    @apply bg-background text-foreground;
+    @apply bg-zinc-200 dark:bg-zinc-950;
     width: 100%;
-    max-width: 100vw;
     overflow-x: hidden;
-    min-height: 100dvh;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
     font-feature-settings: "rlig" 1, "calt" 1;
-    -webkit-tap-highlight-color: transparent; /* PWA/Mobile optimizations */
+    -webkit-tap-highlight-color: transparent;
     overscroll-behavior-y: none;
+  }
+
+  #root {
+    @apply mx-auto max-w-[430px] w-full min-h-[100dvh] bg-background text-foreground relative shadow-[0_0_40px_rgba(0,0,0,0.1)] overflow-x-hidden;
   }
 }
 
