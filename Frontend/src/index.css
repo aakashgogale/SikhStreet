@@ -1,0 +1,116 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    /* Premium Sikh Spiritual Theme */
+    --background: 40 33% 96%; /* #FAF7F2 */
+    --foreground: 215 28% 17%; /* #1F2937 */
+    
+    --primary: 24 88% 45%; /* #D95F0E */
+    --primary-foreground: 0 0% 100%;
+    
+    --secondary: 0 0% 15%;
+    --secondary-foreground: 0 0% 100%;
+    
+    --accent: 34 91% 66%; /* #F6B15A */
+    --accent-foreground: 0 0% 100%;
+    
+    --card: 0 0% 100%; /* #FFFFFF */
+    --card-foreground: 215 28% 17%;
+    
+    --muted: 40 33% 96%; /* #FAF7F2 */
+    --muted-foreground: 215 16% 46%; /* #6B7280 */
+    
+    --popover: 0 0% 100%;
+    --popover-foreground: 215 28% 17%;
+    
+    --border: 33 31% 87%; /* #E8DED2 */
+    --input: 33 31% 87%;
+    --ring: 24 88% 45%;
+    
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 0 0% 100%;
+    
+    --radius: 0.75rem; /* Clean rounded corners */
+  }
+
+  .dark {
+    --background: 240 4% 11%; /* Deep Charcoal #1C1C1E */
+    --foreground: 0 0% 98%;
+
+    --card: 240 5% 15%;
+    --card-foreground: 0 0% 98%;
+
+    --popover: 240 5% 15%;
+    --popover-foreground: 0 0% 98%;
+
+    --primary: 30 100% 55%; /* Deep Saffron slightly darker */
+    --primary-foreground: 0 0% 98%;
+
+    --secondary: 45 100% 45%;
+    --secondary-foreground: 0 0% 98%;
+
+    --muted: 240 4% 15%;
+    --muted-foreground: 240 5% 65%;
+
+    --accent: 240 4% 20%;
+    --accent-foreground: 0 0% 98%;
+
+    --destructive: 0 62.8% 30.6%;
+    --destructive-foreground: 0 0% 98%;
+
+    --border: 240 4% 20%;
+    --input: 240 4% 20%;
+    --ring: 30 100% 55%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply bg-background text-foreground;
+    width: 100%;
+    max-width: 100vw;
+    overflow-x: hidden;
+    min-height: 100dvh;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    font-feature-settings: "rlig" 1, "calt" 1;
+    -webkit-tap-highlight-color: transparent; /* PWA/Mobile optimizations */
+    overscroll-behavior-y: none;
+  }
+}
+
+@layer utilities {
+  .glass {
+    @apply bg-white/70 backdrop-blur-md border border-white/20 shadow-sm dark:bg-black/20 dark:border-white/10;
+  }
+}
+
+/* Custom scrollbar for desktop, hidden for mobile */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+::-webkit-scrollbar-thumb {
+  background: #cbd5e1;
+  border-radius: 4px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #94a3b8;
+}
+
+/* Utilities for PWA and Mobile First */
+.safe-area-pt {
+  padding-top: env(safe-area-inset-top);
+}
+.safe-area-pb {
+  padding-bottom: env(safe-area-inset-bottom);
+}
